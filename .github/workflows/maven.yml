@@ -1,14 +1,9 @@
 name: Java CI
 
 on:
-  pull_request:
-    branches:
-      - master
-      - 2.3.x
   push:
     branches:
-      - master
-      - 2.3.x
+      - test/3.7
 
 jobs:
   package:
@@ -32,13 +27,7 @@ jobs:
       fail-fast: false
       matrix:
         docker-img:
-          - docker.io/arangodb/arangodb:3.4.9
-          - docker.io/arangodb/arangodb:3.5.4
-          - docker.io/arangodb/arangodb:3.6.2
           - docker.io/arangodb/arangodb-preview:3.7.0-alpha.2
-          - docker.io/arangodb/enterprise:3.4.9
-          - docker.io/arangodb/enterprise:3.5.4
-          - docker.io/arangodb/enterprise:3.6.2
           - docker.io/arangodb/enterprise-preview:3.7.0-alpha.2
         topology:
           - single
